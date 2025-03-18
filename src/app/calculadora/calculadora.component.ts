@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms'
+import { FormularioComponent } from "../formulario/formulario.component";
+import { ResultadoComponent } from "../resultado/resultado.component";
 
 @Component({
   selector: 'app-calculadora',
-  imports: [FormsModule],
+  imports: [FormsModule, FormularioComponent, ResultadoComponent],
   templateUrl: './calculadora.component.html',
   styleUrl: './calculadora.component.css'
 })
 export class CalculadoraComponent {
-  numero1 = 0;
-  numero2 =0;
+  resultadoPadre:number = 0;
 
+  actualizarResultado(resultado: number){
+    this.resultadoPadre = resultado;
+  }
  
 }
